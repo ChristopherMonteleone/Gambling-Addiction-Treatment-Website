@@ -1,0 +1,411 @@
+body {
+    background-color:white;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+h1 {
+    padding: 0 40px;
+}
+
+h2 {
+    padding: 0 40px;
+}
+
+p {
+    font-size: 20px; /* Sets the size of the font */
+    padding: 0 40px;
+}
+
+.section-line {
+    border: none; /* Remove default border */
+    height: 4px; /* Set the height of the line */
+    background-color: #226385; /* Set the color of the line */
+    margin: 20px 40px; /* Add some space before and after the line */
+    padding: 0 40px;
+}
+
+.container {
+    display: flex;
+}
+
+.left-column {
+    width: 70%;
+}
+
+.right-column {
+    width: 30%;
+    padding-right: 40px;
+}
+
+.header-image {
+    margin-left: 40px; /* Moves the image over by 20 pixels to the right */
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a3047;
+    justify-content: center;
+    display: flex;
+}
+
+.navbar li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover, .navbar .dropdown:hover .dropbtn {
+    background-color: #1a3047;
+    text-decoration: underline;
+}
+
+.navbar .dropdown {
+    display: inline-block;
+}
+
+.navbar .dropdown-content {
+    display: none; /* Temporarily set to block to check visibility */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.navbar .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar .dropbtn:hover + .dropdown-content {
+    display: block;
+}
+
+/* Keep dropdown content visible when hovering over trigger or content */
+.navbar .dropdown:hover .dropdown-content,
+.navbar .dropdown-content:hover {
+    display: block;
+}
+
+/* Hide dropdown content only when the mouse leaves both the trigger and content */
+.navbar .dropdown:not(:hover) .dropdown-content {
+    display: none;
+}
+
+.terminology-section {
+    background-color: #f8f8f8; /* Light grey background similar to your image */
+    border: 1px solid #dddddd; /* Border as per your design */
+    padding: 20px;
+    margin: 20px 40px; /* Consistent with your other elements */
+}
+
+.info-box {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-box h3 {
+    border-bottom: 2px solid #226385;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.info-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-box li a {
+    display: block;
+    color: #226385;
+    padding: 10px 0;
+    text-decoration: none;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.info-box li a:last-child {
+    border-bottom: none;
+}
+
+.info-box li a:hover {
+    background-color: #f4f4f4;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    background-color: #1a3047; /* Choose any solid color you like */
+    color: white; /* Set text color for contrast */
+    text-align: center; /* Center the text */
+    padding: 20px 0; /* Add some padding */
+    position: relative; /* Can be absolute or fixed depending on needs */
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+}
+
+.dropbtn {
+    position: relative; /* Necessary for proper positioning of the pseudo-element */
+}
+
+.dropbtn::after {
+    content: "";
+    position: absolute;
+    right: 2px; /* Adjust this value as needed to position the triangle correctly */
+    top: 50%; /* Center the triangle vertically relative to the button text */
+    transform: translateY(-50%);
+    border-left: 5px solid transparent; /* Triangle left side */
+    border-right: 5px solid transparent; /* Triangle right side */
+    border-top: 5px solid white; /* Triangle bottom (actually the top side of the triangle) */
+}
+.header-container {
+    display: flex; /* Aligns children (image and phone number) side by side */
+    align-items: center; /* Centers children vertically */
+    justify-content: space-between; /* Adds space between the children */
+    padding: 0px 0px; /* Padding on the sides */
+}
+
+.header-container img {
+    height: 100%; /* Makes the image fill the container height */
+    width: auto; /* Maintains the aspect ratio of the image */
+}
+.phone-number-section {
+    display: flex;
+    align-items: center; /* Centers children vertically */
+    padding: 10px 10px; /* Adjust padding as needed */
+    background-color: #f8f8f8;
+    border: 1px solid #dddddd;
+    margin: 0 0px;
+}
+
+.text-info {
+    display: flex; /* Optional: only needed if further alignment is required */
+    flex-direction: column; /* Stacks children vertically */
+    padding-right: 20px; /* Space between text and divider */
+}
+
+.divider {
+    padding: 0; /* Space around the divider */
+    font-size: 24px; /* Adjust size as needed */
+    color: #A9A9A9; /* Color to match design */
+    border-left: 2px solid #A9A9A9; /* Creates a vertical line */
+    height: 40px; /* Adjust the height as needed */
+    align-self: center; /* Centers the divider vertically within the container */
+}
+
+.phone-number h1 {
+    margin: 0; /* Removes margin around the h1 */
+    font-size: 30px; /* Consistent font size */
+    line-height: 1.2; /* Adjust line height to control space */
+    color: #226385;
+}
+
+.download-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Optional: vertically centers the items if they have different heights */
+    line-height: 0.5;
+}
+
+.left-aligned {
+    text-align: left;
+    margin: 0; /* Remove default margin */
+    line-height: 0.5; /* Adjust line height as needed */
+}
+
+.right-aligned {
+    text-align: right;
+    margin: 0; /* Remove default margin */
+}
+
+.content-wrapper {
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 0px; /* Optional: add padding for some space inside the container */
+}
+
+.video-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 20px 40px;
+    padding-right: 0px;
+}
+
+.video-wrapper .video {
+    flex: 1;
+    max-width: 50%;
+    padding-top: 25px;
+}
+
+.video-wrapper .description {
+    flex: 1;
+    max-width: 50%;
+}
+
+.video-wrapper iframe {
+    width: 100% !important;
+    height: 215px !important; /* Adjusted height to match 16:9 aspect ratio */
+}
+
+.question {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Yantramanav', sans-serif;
+}
+.options {
+    margin-top: 10px;
+}
+.options input {
+    margin-right: 10px;
+}
+.hidden {
+    display: none;
+}
+#recommendation {
+    margin-top: 20px;
+    background-color: #ffdddd;
+    border: 1px solid #ffcccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+#not-severe {
+    margin-top: 20px;
+    background-color: #ddffdd;
+    border: 1px solid #ccffcc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.chart-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.chart-table th, .chart-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.chart-table th {
+    background-color: #1a3047;
+    color: white;
+    text-align: center;
+}
+
+.chart-table td ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.chart-table td ul li {
+    margin-bottom: 10px;
+}
+
+.contact-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px 40px;
+}
+
+.contact-container input, .contact-container textarea {
+    width: 100%; /* Adjust the width to account for padding */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container button:hover {
+    background-color: darkred;
+}
+
+.g-recaptcha {
+    margin: 10px 0;
+}
+
+.podcast-section {
+    padding: 20px 40px;
+}
+
+.podcast-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.podcast-cover {
+    max-width: 100px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.podcast-description {
+    flex: 1;
+}
+
+.podcast-description p {
+    margin: 5px 0;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
