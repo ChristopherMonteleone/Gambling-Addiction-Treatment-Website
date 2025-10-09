@@ -55,11 +55,16 @@
   }
 
   function updateActiveLinks(path) {
-    document.querySelectorAll('[data-route].active-route').forEach((link) => {
-      link.classList.remove('active-route');
-    });
-    document.querySelectorAll(`[data-route="${path}"]`).forEach((link) => {
-      link.classList.add('active-route');
+    const normalizedPath = normalizePath(path);
+    document.querySelectorAll('[data-route]').forEach((link) => {
+      const linkPath = normalizePath(link.getAttribute('data-route'));
+      const isExactMatch = linkPath === normalizedPath;
+      const isParentMatch = linkPath !== '/' && normalizedPath.startsWith(`${linkPath}/`);
+      if (isExactMatch || isParentMatch) {
+        link.classList.add('active-route');
+      } else {
+        link.classList.remove('active-route');
+      }
     });
   }
 
@@ -176,6 +181,174 @@
                 <li><p style="font-size: 20px; padding: 0 40px;">Gambling Disorder and Crime</p></li>
             </ol>
         `);
+  }
+
+  function renderTreatmentOverview() {
+    setContent(`
+        <h1>Treatment Services</h1>
+        <p>The Gambling Addiction Treatment Center provides evidence-based counseling, education, and recovery planning tailored to each client. Our team partners with individuals, couples, and families to build sustainable skills that reduce harm and promote long-term wellness.</p>
+        <p>Explore the services below to learn how we can support you at every stage of recovery.</p>
+        <hr class="section-line">
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Treatment/FreeGamblingAssessment" data-route="/Treatment/FreeGamblingAssessment">Free Gambling Assessment</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Treatment/ForGamblers" data-route="/Treatment/ForGamblers">For Gamblers</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Treatment/ForFamilyAndLovedOnes" data-route="/Treatment/ForFamilyAndLovedOnes">For Family and Loved Ones</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Treatment/TelehealthOptions" data-route="/Treatment/TelehealthOptions">Telehealth Options</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Treatment/SelfHelpOptions" data-route="/Treatment/SelfHelpOptions">Self-Help Options</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Treatment/SelfAssessmentQuestionnaire" data-route="/Treatment/SelfAssessmentQuestionnaire">Self-Assessment Questionnaire</a></li>
+        </ul>
+    `);
+  }
+
+  function renderFreeAssessment() {
+    setContent(`
+        <h1>Free Gambling Assessment</h1>
+        <p>We offer complimentary clinical assessments to help you understand how gambling may be affecting your life. During the appointment, a counselor reviews your history, identifies strengths, and collaborates on a personalized care plan.</p>
+        <p>Call <strong>(702) 827-9404</strong> to schedule an assessment or <a href="/ContactUs" data-route="/ContactUs">contact us online</a> to request an appointment.</p>
+    `);
+  }
+
+  function renderForGamblers() {
+    setContent(`
+        <h1>Treatment for Gamblers</h1>
+        <p>Therapy sessions focus on rebuilding control, understanding triggers, and applying practical tools that support recovery. We integrate cognitive-behavioral strategies, motivational interviewing, and mindfulness-based approaches that have demonstrated effectiveness for gambling disorder.</p>
+        <p>Services are available in individual and group formats so you can receive support in the way that fits you best.</p>
+    `);
+  }
+
+  function renderForFamilyAndLovedOnes() {
+    setContent(`
+        <h1>Support for Family and Loved Ones</h1>
+        <p>Family members often experience stress, confusion, and financial strain alongside their loved one. We provide counseling and education that helps families set healthy boundaries, practice self-care, and participate in the recovery process in meaningful ways.</p>
+        <p>Sessions can be scheduled with or without the gambler present depending on your needs.</p>
+    `);
+  }
+
+  function renderTelehealthOptions() {
+    setContent(`
+        <h1>Telehealth Options</h1>
+        <p>Virtual sessions connect you with licensed clinicians through secure video conferencing. Telehealth allows you to attend therapy from your home or office while still receiving the same compassionate care offered in person.</p>
+        <p>Ask our reception team about telehealth availability when you schedule your next appointment.</p>
+    `);
+  }
+
+  function renderSelfHelpOptions() {
+    setContent(`
+        <h1>Self-Help Options</h1>
+        <p>Self-guided resources complement counseling by reinforcing recovery skills between sessions. We recommend combining the following tools with professional support for the best outcomes:</p>
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;">Daily journaling to track urges, emotions, and wins in recovery.</li>
+            <li style="font-size: 20px; padding: 0 40px;">Mindfulness and breathing exercises such as those in our <a href="/Resources/MindfulnessMeditation" data-route="/Resources/MindfulnessMeditation">Mindfulness Meditation</a> guide.</li>
+            <li style="font-size: 20px; padding: 0 40px;">Peer support meetings in the community or online to stay accountable.</li>
+        </ul>
+    `);
+  }
+
+  function renderResourcesOverview() {
+    setContent(`
+        <h1>Resource Library</h1>
+        <p>Browse articles, videos, and community programs that reinforce healthy habits, financial stability, and informed decision-making during recovery.</p>
+        <hr class="section-line">
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/AudioAndVideoLibrary" data-route="/Resources/AudioAndVideoLibrary">Audio and Video Library</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/ArticlesOnGamblingAddiction" data-route="/Resources/ArticlesOnGamblingAddiction">Articles on Gambling Addiction</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/SuggestedReadings" data-route="/Resources/SuggestedReadings">Suggested Readings</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/FinancialResources" data-route="/Resources/FinancialResources">Financial Resources</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/MythsAndFacts" data-route="/Resources/MythsAndFacts">Myths and Facts</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/NevadaCouncilOnProblemGambling" data-route="/Resources/NevadaCouncilOnProblemGambling">Nevada Council on Problem Gambling</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/SelfExclusion" data-route="/Resources/SelfExclusion">Self-Exclusion</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/NevadaGamblingDiversionCourt" data-route="/Resources/NevadaGamblingDiversionCourt">Nevada Gambling Diversion Court</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/Podcasts" data-route="/Resources/Podcasts">Podcasts</a></li>
+        </ul>
+    `);
+  }
+
+  function renderSuggestedReadings() {
+    setContent(`
+        <h1>Suggested Readings</h1>
+        <p>Recommended books and manuals provide practical guidance and personal stories that resonate with individuals in recovery.</p>
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;">"Overcoming Problem Gambling" by Philip Mawer</li>
+            <li style="font-size: 20px; padding: 0 40px;">"Mindfulness for Addictions" by Francesco Pagnini</li>
+            <li style="font-size: 20px; padding: 0 40px;">"Addiction Recovery Skills" by Suzette Glasner</li>
+        </ul>
+        <p>Check with your local library or online retailers for availability.</p>
+    `);
+  }
+
+  function renderFinancialResources() {
+    setContent(`
+        <h1>Financial Resources</h1>
+        <p>Financial counseling and protective tools help repair the impact gambling can have on personal finances.</p>
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;">Meet with a certified financial counselor to create a realistic repayment plan.</li>
+            <li style="font-size: 20px; padding: 0 40px;">Use spending trackers and budgeting apps to monitor cash flow in real time.</li>
+            <li style="font-size: 20px; padding: 0 40px;">Consider third-party money management agreements when accountability is needed.</li>
+        </ul>
+    `);
+  }
+
+  function renderMythsAndFacts() {
+    setContent(`
+        <h1>Myths and Facts about Gambling</h1>
+        <p>Understanding the science of gambling helps dispel common misconceptions that keep people stuck in harmful patterns.</p>
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;"><strong>Myth:</strong> "I’m due for a win." <strong>Fact:</strong> Games of chance are random, and previous outcomes do not influence future results.</li>
+            <li style="font-size: 20px; padding: 0 40px;"><strong>Myth:</strong> "Gambling is a good way to solve money problems." <strong>Fact:</strong> Gambling typically creates additional debt and stress.</li>
+            <li style="font-size: 20px; padding: 0 40px;"><strong>Myth:</strong> "I can quit anytime." <strong>Fact:</strong> Gambling disorder is recognized as an addiction and often requires structured support.</li>
+        </ul>
+    `);
+  }
+
+  function renderNevadaCouncil() {
+    setContent(`
+        <h1>Nevada Council on Problem Gambling</h1>
+        <p>The Nevada Council on Problem Gambling provides statewide education, helplines, and referrals for individuals seeking help. Visit <a href="https://www.nevadacouncil.org" target="_blank" rel="noopener">nevadacouncil.org</a> for current programs and training opportunities.</p>
+        <p>Our clinicians collaborate with the council to ensure Nevadans have access to comprehensive care.</p>
+    `);
+  }
+
+  function renderSelfExclusion() {
+    setContent(`
+        <h1>Self-Exclusion</h1>
+        <p>Self-exclusion programs allow individuals to voluntarily ban themselves from gambling establishments or online platforms. Enrollment helps reduce temptation while other recovery supports are put in place.</p>
+        <p>Speak with your counselor or visit the Nevada Gaming Control Board to learn more about enrollment requirements.</p>
+    `);
+  }
+
+  function renderDiversionCourt() {
+    setContent(`
+        <h1>Nevada Gambling Diversion Court</h1>
+        <p>The diversion court connects eligible defendants with treatment instead of incarceration. Participants engage in therapy, monitoring, and restitution planning while addressing the underlying gambling disorder.</p>
+        <p>Attorneys and court representatives can contact our office to discuss assessments or treatment coordination.</p>
+    `);
+  }
+
+  function renderOurTeam() {
+    setContent(`
+        <h1>Our Team</h1>
+        <p>The Gambling Addiction Treatment Center is staffed by licensed mental health professionals with decades of combined experience treating gambling disorder. Our clinicians integrate research-driven practices with compassionate care.</p>
+        <p>We collaborate with psychiatrists, financial specialists, and recovery peers to ensure each client receives well-rounded support.</p>
+    `);
+  }
+
+  function renderResearchOverview() {
+    setContent(`
+        <h1>Research Initiatives</h1>
+        <p>Research informs every aspect of our treatment planning. We contribute to statewide studies, publish findings, and translate emerging evidence into practical tools for clients and providers.</p>
+        <hr class="section-line">
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Research/ArticlesAndPublications" data-route="/Research/ArticlesAndPublications">Articles and Publications</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Research/ResearchRounds" data-route="/Research/ResearchRounds">Research Rounds</a></li>
+        </ul>
+    `);
+  }
+
+  function renderNews() {
+    setContent(`
+        <h1>News and Updates</h1>
+        <p>Check back soon for announcements about upcoming groups, community events, and newly published research. We regularly update this page with opportunities to stay engaged in recovery-focused education.</p>
+    `);
   }
 
   function initializeQuestionnaire() {
@@ -310,9 +483,24 @@
     setContent(originalContent);
   });
   registerRoute('/OurMission', renderMission);
+  registerRoute('/OurTeam', renderOurTeam);
+  registerRoute('/News', renderNews);
+  registerRoute('/Treatment', renderTreatmentOverview);
+  registerRoute('/Treatment/FreeGamblingAssessment', renderFreeAssessment);
+  registerRoute('/Treatment/ForGamblers', renderForGamblers);
+  registerRoute('/Treatment/ForFamilyAndLovedOnes', renderForFamilyAndLovedOnes);
+  registerRoute('/Treatment/TelehealthOptions', renderTelehealthOptions);
+  registerRoute('/Treatment/SelfHelpOptions', renderSelfHelpOptions);
   registerRoute('/Resources/AudioAndVideoLibrary', () => {
     setContent(typeof audioVideoLibraryContent !== 'undefined' ? audioVideoLibraryContent : originalContent);
   });
+  registerRoute('/Resources', renderResourcesOverview);
+  registerRoute('/Resources/SuggestedReadings', renderSuggestedReadings);
+  registerRoute('/Resources/FinancialResources', renderFinancialResources);
+  registerRoute('/Resources/MythsAndFacts', renderMythsAndFacts);
+  registerRoute('/Resources/NevadaCouncilOnProblemGambling', renderNevadaCouncil);
+  registerRoute('/Resources/SelfExclusion', renderSelfExclusion);
+  registerRoute('/Resources/NevadaGamblingDiversionCourt', renderDiversionCourt);
   registerRoute('/Resources/ArticlesOnGamblingAddiction', renderArticlesOverview);
   registerRoute('/Resources/Podcasts', () => {
     setContent(typeof podcastContent !== 'undefined' ? podcastContent : originalContent);
@@ -328,6 +516,7 @@
   });
   registerRoute('/Treatment/SelfAssessmentQuestionnaire', renderSelfAssessment);
   registerRoute('/ContactUs', renderContact);
+  registerRoute('/Research', renderResearchOverview);
   registerRoute('/Research/ArticlesAndPublications', () => {
     setContent(typeof articlesAndPublicationsContent !== 'undefined' ? articlesAndPublicationsContent : originalContent);
   });
