@@ -1,0 +1,1 @@
+Website for the Gambling Addiction Treatment Center (formerly GamblingAddictionTreatment.org, now MHCC.biz) led by Dr. Rory Reid (UCLA). Demonstrates practical, production-quality web development for a real healthcare organization.
