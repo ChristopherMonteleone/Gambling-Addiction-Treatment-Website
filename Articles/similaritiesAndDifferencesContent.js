@@ -6,7 +6,7 @@ const similaritiesAndDifferencesContent = `
 <p style="text-align: left; line-height: 0.5;">Department of Psychiatry and Biobehavioral Sciences</p>
 <div class="download-container">
     <p class="left-aligned">University of California Los Angeles</p>
-    <p class="right-aligned"><a href="Similarities and Differences GD and SUDs.pdf" download="Similarities and Differences GD and SUDs.pdf">Download PDF</a></p>
+    <p class="right-aligned"><a href="Articles/Similarities and Differences GD and SUDs (2).pdf" download="Similarities and Differences GD and SUDs.pdf">Download PDF</a></p>
 </div>
 <hr class="section-line">
 <p>Gambling disorder is classified as a behavioral addiction in the bible of psychiatry in the same section
