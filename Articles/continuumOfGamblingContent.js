@@ -5,7 +5,7 @@ const continuumOfGamblingContent = `
 <p style="text-align: left; line-height: 0.5;">Department of Psychiatry and Biobehavioral Sciences</p>
 <div class="download-container">
     <p class="left-aligned">University of California Los Angeles</p>
-    <p class="right-aligned"><a href="Similarities and Differences GD and SUDs.pdf" download="Similarities and Differences GD and SUDs.pdf">Download PDF</a></p>
+    <p class="right-aligned"><a href="Articles/Similarities and Differences GD and SUDs (2).pdf" download="Similarities and Differences GD and SUDs.pdf">Download PDF</a></p>
 </div>
 <hr class="section-line">
 <p>Gambling activities span along a continuum from no gambling to disordered gambling. In
@@ -18,7 +18,7 @@ by Dr. Reid where he discusses the continuum and ways to think about it.</p>
     <iframe width="100%" height="415" src="https://www.youtube.com/embed/YJ05psJHaSM?si=a-7UHEkyGvfamw8b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div style="text-align: center;">
-    <img src="Continuum.png" alt="Continuum" width="90%" height="90%">
+    <img src="Images/Continuum.png" alt="Continuum" width="90%" height="90%">
 </div>
 <div class="terminology-section">
     <p><b>HARM:</b> Significant loss or damage causing pain, suffering, and adverse consequences that interfere with activities of daily living, relationships, employment, health, or psychological well-being.</p>
