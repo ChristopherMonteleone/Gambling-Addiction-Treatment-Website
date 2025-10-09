@@ -26,7 +26,7 @@ const audioVideoLibraryContent = `
             <iframe src="https://www.youtube.com/embed/IqoMD_P5NFU?si=JyEMJme_jTtZzRRF" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="description">
-            <p><b>Defining Three Components of Self-Compassion:</b> Dr. Kristin Neff, Associate Professor of Educational Psychology at the University of Texas at Austin, discusses what self-compassion is and how we can recruit self-compassionate thoughts.</p>
+            <p><b>Self-Compassion as an Antidote to Shame:</b> Dr. Kristin Neff, Associate Professor of Educational Psychology at the University of Texas at Austin, discusses how self-compassion can be a remedy for self-critical shame that is often associated with addiction.</p>
         </div>
     </div>
     <div class="video-wrapper">
@@ -34,7 +34,7 @@ const audioVideoLibraryContent = `
             <iframe src="https://www.youtube.com/embed/JXfinkKWFsM?si=X4I1u1r_0Ph6DknT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="description">
-            <p><b>Self-Compassion as an Antidote to Shame:</b> Dr. Kristin Neff, Associate Professor of Educational Psychology at the University of Texas at Austin, discusses how self-compassion can be a remedy for self-critical shame that is often associated with addiction.</p>
+            <p><b>Defining Three Components of Self-Compassion:</b> Dr. Kristin Neff, Associate Professor of Educational Psychology at the University of Texas at Austin, discusses what self-compassion is and how we can recruit self-compassionate thoughts.</p>
         </div>
     </div>
     <div class="video-wrapper">
