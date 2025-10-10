@@ -184,29 +184,56 @@ footer p {
     border-top: 5px solid white; /* Triangle bottom (actually the top side of the triangle) */
 }
 .header-container {
-    display: flex; /* Aligns children (image and phone number) side by side */
-    align-items: center; /* Centers children vertically */
-    justify-content: space-between; /* Adds space between the children */
-    padding: 0px 0px; /* Padding on the sides */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
 }
 
-.header-container img {
-    height: 100%; /* Makes the image fill the container height */
-    width: auto; /* Maintains the aspect ratio of the image */
+.header-container > .logo-image {
+    max-height: 90px;
+    width: auto;
 }
+
+.header-container > .logo-image + .logo-image {
+    margin-left: 18px;
+}
+
+.header-container > .logo-image + .phone-number-section {
+    margin-left: 8px;
+}
+
+.tree-logo {
+    margin-right: 0;
+}
+
 .phone-number-section {
     display: flex;
-    align-items: center; /* Centers children vertically */
-    padding: 10px 10px; /* Adjust padding as needed */
+    align-items: center;
     background-color: #f8f8f8;
     border: 1px solid #dddddd;
-    margin: 0 0px;
+    padding: 12px 28px;
+    flex: 1 1 380px;
+}
+
+.phone-number-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    column-gap: 16px;
 }
 
 .text-info {
-    display: flex; /* Optional: only needed if further alignment is required */
-    flex-direction: column; /* Stacks children vertically */
-    padding-right: 20px; /* Space between text and divider */
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+    text-align: right;
+    font-size: 17px;
 }
 
 .divider {
@@ -223,6 +250,10 @@ footer p {
     font-size: 30px; /* Consistent font size */
     line-height: 1.2; /* Adjust line height to control space */
     color: #226385;
+}
+
+.phone-number {
+    white-space: nowrap;
 }
 
 .download-container {
