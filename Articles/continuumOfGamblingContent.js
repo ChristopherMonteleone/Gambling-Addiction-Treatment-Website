@@ -18,7 +18,7 @@ by Dr. Reid where he discusses the continuum and ways to think about it.</p>
     <iframe width="100%" height="415" src="https://www.youtube.com/embed/YJ05psJHaSM?si=a-7UHEkyGvfamw8b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div style="text-align: center;">
-    <img src="Images/Continuum.png" alt="Continuum" width="90%" height="90%">
+    <img src="/Images/continuum.png" alt="Continuum of gambling behavior chart" width="90%" height="90%">
 </div>
 <div class="terminology-section">
     <p><b>HARM:</b> Significant loss or damage causing pain, suffering, and adverse consequences that interfere with activities of daily living, relationships, employment, health, or psychological well-being.</p>
