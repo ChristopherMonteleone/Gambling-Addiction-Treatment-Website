@@ -211,28 +211,35 @@ footer p {
     margin-right: 0;
 }
 
+
 .phone-number-section {
     display: flex;
     align-items: center;
     background-color: #f8f8f8;
     border: 1px solid #dddddd;
-    padding: 12px 28px;
-    flex: 1 1 380px;
+    padding: 12px 32px;
+    flex: 1 1 420px;
 }
 
 .phone-number-content {
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
-    column-gap: 16px;
+    justify-content: center;
+    column-gap: 28px;
+}
+
+.text-info,
+.phone-number {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    text-align: center;
+    padding: 0 12px;
 }
 
 .text-info {
-    display: flex;
     flex-direction: column;
-    padding-right: 0;
-    text-align: right;
     font-size: 17px;
 }
 
@@ -250,6 +257,10 @@ footer p {
     font-size: 30px; /* Consistent font size */
     line-height: 1.2; /* Adjust line height to control space */
     color: #226385;
+}
+
+.phone-number {
+    white-space: nowrap;
 }
 
 .phone-number {
