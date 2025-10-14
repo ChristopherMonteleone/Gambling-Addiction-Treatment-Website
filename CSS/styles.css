@@ -11,9 +11,28 @@ h2 {
     padding: 0 40px;
 }
 
+h3 {
+    padding: 0 40px;
+}
+
 p {
     font-size: 20px; /* Sets the size of the font */
     padding: 0 40px;
+}
+
+.offer-list,
+.steps-list {
+    padding: 0 60px;
+    font-size: 20px;
+}
+
+.offer-list li,
+.steps-list li {
+    margin-bottom: 12px;
+}
+
+.steps-list li {
+    padding-left: 8px;
 }
 
 .section-line {
@@ -197,6 +216,58 @@ footer p {
 .header-container > .logo-image {
     max-height: 90px;
     width: auto;
+}
+
+.contact-card {
+    background-color: #f8f8f8;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    margin: 30px 40px;
+    padding: 20px 24px 28px;
+}
+
+.contact-card h2 {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.contact-card p {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.contact-reveal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 20px;
+}
+
+.reveal-button {
+    background-color: #226385;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 16px;
+    transition: background-color 0.2s ease;
+}
+
+.reveal-button:hover,
+.reveal-button:focus {
+    background-color: #1a3047;
+    outline: none;
+}
+
+.hidden-phone {
+    display: none;
+    font-weight: 600;
+}
+
+.hidden-phone.visible {
+    display: inline;
 }
 
 .header-container > .logo-image + .logo-image {
