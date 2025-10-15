@@ -270,6 +270,111 @@ footer p {
     display: inline;
 }
 
+.tagline {
+    padding: 0 40px;
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+
+.logo-section {
+    margin: 28px 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.logo-intro,
+.logo-outro {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.logo-intro .logo-visual,
+.logo-outro .logo-visual {
+    flex: 0 0 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-intro .logo-visual img,
+.logo-outro .logo-visual img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+}
+
+.logo-text-block {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.logo-text-block h2,
+.logo-text-block > p {
+    padding: 0;
+}
+
+.logo-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.logo-element h3 {
+    padding: 0;
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo-element p {
+    padding: 0;
+    margin: 0;
+}
+
+.logo-outro {
+    justify-content: space-between;
+}
+
+.logo-outro .logo-element {
+    flex: 1 1 auto;
+}
+
+@media (max-width: 900px) {
+    .logo-intro,
+    .logo-outro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-intro .logo-text-block {
+        order: -1;
+    }
+
+    .logo-text-block,
+    .logo-outro .logo-element {
+        width: 100%;
+    }
+
+    .logo-elements {
+        align-items: stretch;
+        text-align: left;
+    }
+}
+
+.transformation-callout {
+    font-weight: 600;
+    font-size: 22px;
+    padding: 0 40px;
+    margin: 40px 0 60px;
+    text-align: center;
+}
+
 .header-container > .logo-image + .logo-image {
     margin-left: 18px;
 }
@@ -328,14 +433,6 @@ footer p {
     font-size: 30px; /* Consistent font size */
     line-height: 1.2; /* Adjust line height to control space */
     color: #226385;
-}
-
-.phone-number {
-    white-space: nowrap;
-}
-
-.phone-number {
-    white-space: nowrap;
 }
 
 .phone-number {
