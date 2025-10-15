@@ -250,22 +250,32 @@
         <p>Browse articles, videos, and community programs that reinforce healthy habits, financial stability, and informed decision-making during recovery.</p>
         <hr class="section-line">
         <ul style="margin-left: 40px;">
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/AudioAndVideoLibrary" data-route="/Resources/AudioAndVideoLibrary">Audio and Video Library</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/ArticlesOnGamblingAddiction" data-route="/Resources/ArticlesOnGamblingAddiction">Articles on Gambling Addiction</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/SuggestedReadings" data-route="/Resources/SuggestedReadings">Suggested Readings</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/FinancialResources" data-route="/Resources/FinancialResources">Financial Resources</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/MythsAndFacts" data-route="/Resources/MythsAndFacts">Myths and Facts</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/NevadaCouncilOnProblemGambling" data-route="/Resources/NevadaCouncilOnProblemGambling">Nevada Council on Problem Gambling</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/SelfExclusion" data-route="/Resources/SelfExclusion">Self-Exclusion</a></li>
-            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/NevadaGamblingDiversionCourt" data-route="/Resources/NevadaGamblingDiversionCourt">Nevada Gambling Diversion Court</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/AudioAndVideoLibrary" data-route="/Resources/AudioAndVideoLibrary">Audio/Video Library</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/Articles" data-route="/Resources/Articles">Articles Related to Problem Gambling Issues</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/SuggestedReading" data-route="/Resources/SuggestedReading">Suggested Reading</a></li>
             <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/Podcasts" data-route="/Resources/Podcasts">Podcasts</a></li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="/Resources/Weblinks" data-route="/Resources/Weblinks">Weblinks</a></li>
+        </ul>
+    `);
+  }
+
+  function renderWeblinks() {
+    setContent(`
+        <h1>Weblinks</h1>
+        <p>Explore trusted partners and community programs that extend support beyond our clinic.</p>
+        <ul style="margin-left: 40px;">
+            <li style="font-size: 20px; padding: 0 40px;"><a href="https://www.nevadacouncil.org" target="_blank" rel="noopener">Nevada Council on Problem Gambling</a> &mdash; statewide education, helplines, and training opportunities.</li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="https://gaming.nv.gov/" target="_blank" rel="noopener">Nevada Gaming Control Board</a> &mdash; information about the state self-exclusion program and regulatory updates.</li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="https://ag.nv.gov/Hot_Topics/Issue/Problem_Gambling/" target="_blank" rel="noopener">Nevada Problem Gambling Treatment and Resource Centers</a> &mdash; statewide locations and funding information for treatment services.</li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="https://diversion.nvcourts.gov/" target="_blank" rel="noopener">Nevada Gambling Treatment Diversion Court</a> &mdash; specialty court program details and eligibility requirements.</li>
+            <li style="font-size: 20px; padding: 0 40px;"><a href="https://www.ncpgambling.org/help-treatment/national-helpline-1-800-522-4700/" target="_blank" rel="noopener">National Council on Problem Gambling Helpline</a> &mdash; 24/7 confidential help via call or text 1-800-522-4700.</li>
         </ul>
     `);
   }
 
   function renderSuggestedReadings() {
     setContent(`
-        <h1>Suggested Readings</h1>
+        <h1>Suggested Reading</h1>
         <p>Recommended books and manuals provide practical guidance and personal stories that resonate with individuals in recovery.</p>
         <ul style="margin-left: 40px;">
             <li style="font-size: 20px; padding: 0 40px;">"Overcoming Problem Gambling" by Philip Mawer</li>
@@ -496,12 +506,14 @@
   });
   registerRoute('/Resources', renderResourcesOverview);
   registerRoute('/Resources/SuggestedReadings', renderSuggestedReadings);
+  registerRoute('/Resources/SuggestedReading', renderSuggestedReadings);
   registerRoute('/Resources/FinancialResources', renderFinancialResources);
   registerRoute('/Resources/MythsAndFacts', renderMythsAndFacts);
   registerRoute('/Resources/NevadaCouncilOnProblemGambling', renderNevadaCouncil);
   registerRoute('/Resources/SelfExclusion', renderSelfExclusion);
   registerRoute('/Resources/NevadaGamblingDiversionCourt', renderDiversionCourt);
   registerRoute('/Resources/ArticlesOnGamblingAddiction', renderArticlesOverview);
+  registerRoute('/Resources/Articles', renderArticlesOverview);
   registerRoute('/Resources/Podcasts', () => {
     setContent(typeof podcastContent !== 'undefined' ? podcastContent : originalContent);
   });
@@ -514,6 +526,7 @@
   registerRoute('/Resources/SimilaritiesAndDifferences', () => {
     setContent(typeof similaritiesAndDifferencesContent !== 'undefined' ? similaritiesAndDifferencesContent : originalContent);
   });
+  registerRoute('/Resources/Weblinks', renderWeblinks);
   registerRoute('/Treatment/SelfAssessmentQuestionnaire', renderSelfAssessment);
   registerRoute('/ContactUs', renderContact);
   registerRoute('/Research', renderResearchOverview);
