@@ -500,6 +500,7 @@
   registerRoute('/Treatment/ForGamblers', renderForGamblers);
   registerRoute('/Treatment/ForFamilyAndLovedOnes', renderForFamilyAndLovedOnes);
   registerRoute('/Treatment/TelehealthOptions', renderTelehealthOptions);
+  registerRoute('/Treatment/Telehealth', renderTelehealthOptions);
   registerRoute('/Treatment/SelfHelpOptions', renderSelfHelpOptions);
   registerRoute('/Resources/AudioAndVideoLibrary', () => {
     setContent(typeof audioVideoLibraryContent !== 'undefined' ? audioVideoLibraryContent : originalContent);
