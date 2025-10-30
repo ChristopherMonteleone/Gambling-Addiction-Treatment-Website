@@ -8,6 +8,9 @@
   const routeHandlers = new Map();
   const scrollContainer = document.querySelector('.content-wrapper') || contentSection;
 
+  const CONTACT_PHONE_NUMBER = '702 900 1460';
+  const CONTACT_FAX_NUMBER = '702 659 9080';
+
   function normalizePath(path) {
     if (!path) {
       return '/';
@@ -118,7 +121,7 @@
                 <div style="width: 48%; text-align: left;">
                     <h2 style="font-size: 20px; margin-bottom: 10px;">Our Location</h2>
                     <p style="margin: 5px 0;">8565 S. Eastern Ave. Suite 178<br>Las Vegas, NV. 89123</p>
-                    <p style="margin: 5px 0;">Tel: 702.827.9404<br>Fax: 702.935.7215</p>
+                    <p style="margin: 5px 0;">Tel: ${CONTACT_PHONE_NUMBER}<br>Fax: ${CONTACT_FAX_NUMBER}</p>
                 </div>
                 <div style="width: 48%; text-align: left;">
                     <h2 style="font-size: 20px; margin-bottom: 10px;">Reception Hours</h2>
